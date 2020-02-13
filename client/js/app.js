@@ -8,6 +8,7 @@ function getSessionDetails(sessionId, success, error) {
  /* "Session__r.Session_Date__c, " +*/
   "Speaker__r.FirstName, " +
   "Speaker__r.LastName " +
+      "Speaker__r.Picture_URL__c " +
   "FROM Session_Speaker__c " +
   "WHERE Session__r.Id = '" + sessionId + "'";
   force.query(soql, success, error);
@@ -62,6 +63,9 @@ function showSessionDetails(sessionId) {
                             '<li class="table-view-cell">' +
                                 (session.Session__r.Description__c || 'No description yet') +
                             '</li>' +
+                '<li class="table-view-cell">' +
+
+                '<img src="'+ session.Speaker__r.Picture_URL__c+ '" alt="W3Schools.com">'+  '</li>' +
                         '</ul>' +
                     '</div>' +
                 '</div>' +

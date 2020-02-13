@@ -65,7 +65,7 @@ function showSessionDetails(sessionId) {
                             '</li>' +
                 '<li class="table-view-cell">' +
 
-                '<img src="'+ session.Speaker__r.Picture_URL__c+ '" alt="W3Schools.com">'+  '</li>' +
+               + session.Speaker__r.Picture_URL__c +  '</li>' +
                         '</ul>' +
                     '</div>' +
                 '</div>' +

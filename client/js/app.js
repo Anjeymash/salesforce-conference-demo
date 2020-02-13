@@ -6,8 +6,8 @@ function getSessionList(success, error) {
 function getSessionDetails(sessionId, success, error) {
   var soql = "SELECT Session__r.Name, " +
  /* "Session__r.Session_Date__c, " +*/
-  "Speaker__r.First_Name__c, " +
-  "Speaker__r.Last_Name__c " +
+  "Speaker__r.FirstName, " +
+  "Speaker__r.LastName " +
   "FROM Session_Speaker__c " +
   "WHERE Session__r.Id = '" + sessionId + "'";
   force.query(soql, success, error);
@@ -57,7 +57,7 @@ function showSessionDetails(sessionId) {
                               /*  '<p>' + (session.Session__r.Session_Date__c || 'No time yet')+ '</p>' +*/
                             '</li>' +
                             '<li class="table-view-cell">Speaker: ' +
-                                session.Speaker__r.First_Name__c +
+                                session.Speaker__r.FirstName +
                             '</li>' +
                             '<li class="table-view-cell">' +
                                 (session.Session__r.Description__c || 'No description yet') +
